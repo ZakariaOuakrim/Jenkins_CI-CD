@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Pushing to Docker Hub...'
                 script {
-                    bat "docker login -u ouakrimzakaria -p YOUR_ACCESS_TOKEN"
+                    bat "docker login -u ouakrimzakaria -p dckr_pat_6I9sWuBiQUFLS6z1E0uPvIXZ868"
                     bat "docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"
                 }
             }
