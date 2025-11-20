@@ -15,7 +15,15 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/ZakariaOuakrim/Jenkins_CI-CD'
             }
         }
-        
+        stage('Docker Login') {
+    steps {
+        echo 'Logging in to Docker Hub...'
+        script {
+                 bat "docker login -u ouakrimzakaria -p dckr_pat_UoK2UxA03C0Fh449gtO4eIQotAI"
+            }
+        }
+    }
+
         stage('Building image') {
             steps {
                 echo 'Building Docker image...'
